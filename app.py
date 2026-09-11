@@ -80,12 +80,12 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ---------------------------------------------------------------------------
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/manganese_data.csv", parse_dates=["date"])
+    return pd.read_csv("manganese_data.csv", parse_dates=["date"])
 
 @st.cache_resource
 def load_models():
-    reserve_model = joblib.load("model/reserve_model.pkl")
-    risk_model = joblib.load("model/risk_model.pkl")
+    reserve_model = joblib.load("reserve_model.pkl")
+    risk_model = joblib.load("risk_model.pkl")
     return reserve_model, risk_model
 
 df = load_data()
